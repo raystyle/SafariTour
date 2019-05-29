@@ -12,7 +12,7 @@ date:   2019-05-28 15:29:42 +0900
 
 # An analysis of CVE-2019-XXXX
 
-***Timeline:***
+***Timeline:***<br>
 2019-04-27: the bugs were submitted to the zdi.<br>
 2019-05-19: the bugs were submitted to ssd.<br>
 2019-05-27: i read the patches at the webkit head branch.<br>
