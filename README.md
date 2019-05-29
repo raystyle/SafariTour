@@ -22,7 +22,8 @@ date:   2019-05-28 15:29:42 +0900
 ***important note: this is NOT a zeroday, as it is fixed upstream, and its not in the current release...
 it might be pushed into the next stable (probably not), but apple are not offering rewards on safari, so i dont care much..***
 
-you can test it with: https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/
+you can test it with: https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/<br>
+or with jsc branch: e7d79a7a1ac4a33cf90d7261877355d7b22f58ac <br>
 
 ***a brief explanation of the bug:***
 <br>
