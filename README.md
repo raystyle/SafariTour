@@ -481,6 +481,8 @@ if we won't gc, then we can access out of bounds memory.<br>
 because this structures are large, then they are inlined in the function.
 if we would access a different OOB index, we can leak memory of the function.
 
+<br>
+
 <img src="/leak.png" width="500" >
 
 after decoding this values (as big-ints) we get:<br><br>
