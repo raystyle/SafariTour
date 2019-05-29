@@ -540,10 +540,7 @@ the leak code can be found <a href="/leakbase.html">here</a>.<br>
 <br>
 
 to also bypass PAC with this bug (at this exploitation form) is a bit over the head.<br>
-but, we can controll the content of rsi, and rbx (by adding arguments to our<br>
-fake function). so.. if you can find 'valid pac gadgets' you might be able to<br>
-sort something out.. (i didn't have the time to test, because it was patched).<br>
-its also possible to achive an arbitrary write with this bug,<br>
+but, its also possible to achive an arbitrary write with this bug,<br>
 so this might be the way to go here..<br> 
 
 # Bonus bug:
