@@ -440,8 +440,11 @@ such as that it would be interpreted as a function.<br>
 spam the cache with controlled data <br>
 call the function.<br>
 <a href="/call_primitive.html">POC</a><br>
-NOTE: this poc is very reliable, but it require about 2.1 gb of ram heap spray.<br>
-in order to exploit ios, this would not be good enough.<br><br>
+NOTE: this poc is very reliable, but it require about 400mb of ram heap spray.<br>
+and a couple of seconds to run, but as such its not a 100% success rate.<br>
+you can achieve a 100% success rate, but that would require about 2.1gb,<br>
+and some more waiting as a result. this is more reliable when opening the browser<br>
+for the first time..<br>
 
 p.s: the upper bits can be controlled as well..<br>
 
@@ -468,6 +471,8 @@ Target 0: (com.apple.WebKit.WebContent) stopped.
 ***PoC***
 
 ![](/p2.png)
+
+<br>
 
 
 So.. at this point we got the ability to call arbitrary address's.<br>
