@@ -546,6 +546,8 @@ the leak code can be found <a href="/leakbase.html">here</a>.<br>
 <br>
 
 to also bypass PAC with this bug (at this exploitation form) is a bit over the head.<br>
+and frankly i just didn't have the time to test.<br>
+but who knows, maybe apple would push this into stable and then we can all have a little party (???)<br>
 but, its also possible to achive an arbitrary write with this bug,<br>
 so this might be the way to go here..<br> 
 
