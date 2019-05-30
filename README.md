@@ -16,8 +16,7 @@ date:   2019-05-28 15:29:42 +0900
 2019-05-27: i read the patches at the webkit head branch.<br>
 2019-05-27: i noitified the zdi & ssd.<br>
 2019-05-28: sent the report to webkit.<br>
-2019-06-01: as i got no response, and as this is fixed upstream,<br>
-i have decided to publicly disclose this.<br>
+2019-06-01: as i got no response, and as this is fixed upstream, i have decided to publicly disclose this.<br>
 
 ***important note: this is NOT a zeroday, as it is fixed upstream, and its not in the current release...
 it might be pushed into the next stable (probably not), but webkit never answered so i don't care much..***<br>
