@@ -20,7 +20,7 @@ date:   2019-05-28 15:29:42 +0900
 i have decided to publicly disclose this.<br>
 
 ***important note: this is NOT a zeroday, as it is fixed upstream, and its not in the current release...
-it might be pushed into the next stable (probably not), but apple are not offering rewards on safari, so i dont care much..***<br>
+it might be pushed into the next stable (probably not), but webkit never answered so i don't care much..***<br>
 
 this still affects preview v83, but the offsets are obviously broken..<br>
 
