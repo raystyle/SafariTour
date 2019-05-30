@@ -439,7 +439,7 @@ General Purpose Registers:
 replace the backing storage of a dangling pointer (one of those 'objects') <br>
 such as that it would be interpreted as a function.<br>
 spam the cache with controlled data <br>
-call the function: <a href="/call_primitive.html">yo $pc you told BBB that you would call him back..</a><br>
+call the function: <a href="/call_primitive.html">you got a call..</a><br>
 NOTE: this poc require about 400mb of ram heap spray.<br>
 and a couple of seconds to run, but as such its not a 100% success rate.<br>
 you can achieve a 100% success rate, but that would require about 2.1gb,<br>
