@@ -8,7 +8,7 @@ date:   2019-05-28 15:29:42 +0900
 
 <!--<style type="text/css">body {   font-family: TimesNewRoman;}</style>-->
 
-# An analysis of CVE-2019-XXXX
+CVE-2019-XXXX
 
 ***Timeline:***<br>
 2019-04-27: submitted to the zdi.<br>
