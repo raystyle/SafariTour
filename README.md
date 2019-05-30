@@ -1,14 +1,12 @@
+<!--
 ---
 layout: post
 title:  "Take Me to the Safari, a zeroday tour.."
 date:   2019-05-28 15:29:42 +0900
 ---
+-->
 
-<style type="text/css">
-  body {   
-  font-family: TimesNewRoman;
-}
-</style>
+<!--<style type="text/css">body {   font-family: TimesNewRoman;}</style>-->
 
 # An analysis of CVE-2019-XXXX
 
