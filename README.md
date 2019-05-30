@@ -17,10 +17,14 @@ date:   2019-05-28 15:29:42 +0900
 2019-05-19: submitted to ssd.<br>
 2019-05-27: i read the patches at the webkit head branch.<br>
 2019-05-27: i noitified the zdi & ssd.<br>
-2019-05-29: public disclosure.<br>
+2019-05-28: sent the report to webkit.<br>
+2019-06-01: as i got no response, and as this is fixed upstream,<br>
+i have decided to publicly disclose this.<br>
 
 ***important note: this is NOT a zeroday, as it is fixed upstream, and its not in the current release...
-it might be pushed into the next stable (probably not), but apple are not offering rewards on safari, so i dont care much..***
+it might be pushed into the next stable (probably not), but apple are not offering rewards on safari, so i dont care much..***<br>
+
+this still affects preview v83, but the offsets are obviously broken..<br>
 
 you can test it with: https://webkit.org/blog/8921/release-notes-for-safari-technology-preview-82/<br>
 or with jsc branch: e7d79a7a1ac4a33cf90d7261877355d7b22f58ac <br>
@@ -548,8 +552,9 @@ the leak code can be found <a href="/leakbase.html">here</a>.<br>
 to also bypass PAC with this bug (at this exploitation form) is a bit over the head.<br>
 and frankly i just didn't have the time to test.<br>
 but who knows, maybe apple would push this into stable and then we can all have a little party (???)<br>
-but, its also possible to achive an arbitrary write with this bug,<br>
-so this might be the way to go here..<br> 
+but, its also possible to use the fake object from: <a href="/type_conf.js">type_conf.js</a> <br>
+to construct the known primitives, so that might be the way to go.<br>
+
 
 # Bonus bug:
 
